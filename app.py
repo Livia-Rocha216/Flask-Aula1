@@ -1,7 +1,13 @@
 from flask import Flask
 
 app = Flask(__name__)
-@app.route('/')
 
+@app.route('/')
 def index():
     return "Olá, Mundo!"
+
+@app.route('/info')
+def info():
+    modulo = "Flask"
+    aula = 1
+    return f"<h1>Módulo: {modulo}, Aula: {int(aula)}</h1>"
