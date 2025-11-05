@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect
 
 app = Flask(__name__)
 
@@ -14,4 +14,8 @@ def info():
 
 @app.route('/bemvindo/<usuario>')
 def bemvindo(usuario):
-    return f"Bem Vindo(a) {usuario.captalize()}!"
+    return f"Bem Vindo(a) {usuario.capitalize()}!"
+
+@app.route('/home')
+def home():
+    return redirect("/")
