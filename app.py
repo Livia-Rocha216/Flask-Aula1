@@ -1,4 +1,4 @@
-from flask import Flask, redirect
+from flask import Flask, redirect, render_template
 
 app = Flask(__name__)
 
@@ -19,3 +19,7 @@ def bemvindo(usuario):
 @app.route('/home')
 def home():
     return redirect("/")
+
+@app.route('/sobre')
+def sobre():
+    return render_template("sobre.html")
